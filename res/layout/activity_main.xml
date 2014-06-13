@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
-        android:text="TextView" />
+        android:text="今日の一言" />
 
     <TextView
         android:id="@+id/textView2"
@@ -24,10 +24,10 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="22dp"
-        android:text="TextView" />
+        android:text="ひとことを登録" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/edtmsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
@@ -39,29 +39,29 @@
     </EditText>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnmain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignLeft="@+id/edtmsg"
         android:layout_centerVertical="true"
-        android:text="Button" />
+        android:text="メンテ" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btntou"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_alignRight="@+id/editText1"
-        android:text="Button" />
+        android:layout_alignBaseline="@+id/btnmain"
+        android:layout_alignBottom="@+id/btnmain"
+        android:layout_alignRight="@+id/edtmsg"
+        android:text="登録" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btncheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/btnmain"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="64dp"
-        android:text="Button" />
+        android:text="ひとことチェック" />
 
 </RelativeLayout>
