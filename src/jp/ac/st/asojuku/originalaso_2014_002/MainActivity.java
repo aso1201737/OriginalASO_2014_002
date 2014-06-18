@@ -2,6 +2,8 @@ package jp.ac.st.asojuku.originalaso_2014_002;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -10,6 +12,9 @@ import android.widget.EditText;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
+
+	SQLiteDatabase sdb = null;
+	MySQLiteOpenHelper helper = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 		Button btncheck = (Button)findViewById(R.id.btncheck);
 		btncheck.setOnClickListener(this);
+
+
+		if(sdb == null) {
+			helper = new MySQLiteOpenHelper(getApplicationContext());
+		}
+		try{
+			sdb = helper.getWritableDatabase();
+		}catch(SQLiteException e){
+			return;
+		}
+
+
 	}
 
 	@Override
@@ -46,13 +63,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				String inputMsg = etv.getText().toString();
 
 				if(inputMsg!=null && !inputMsg.isEmpty()){
-					helper.insertHitokoto(sdb, inputMsg);
+					helper.insertHikotoko(sdb, inputMsg);
 				}
 				etv.setText("");
 			break;
 			case R.id.btncheck:
-				String strHitokoto = helper.seectRandomHitokoto(sdb);
-				intent = new Intent(MainActivity.this,MaintenanceActivity.class);
+				String strHitokoto = helper.selectRandomHitokoto(sdb);
+				intent = new Intent(MainActivity.this,HitokotoActivity.class);
 				intent.putExtra("hitokoto",strHitokoto);
 				startActivity(intent);
 			break;
