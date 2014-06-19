@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 public class MaintenanceActivity extends Activity {
 
+	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO 自動生成されたメソッド・スタブ
