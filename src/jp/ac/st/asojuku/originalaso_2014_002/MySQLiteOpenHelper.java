@@ -88,7 +88,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 			* @param SQLiteDatabase
 			* @param inputMsg
 			*/
-			public SQLiteCursor selectHitokotoLite(SQLiteDatabase db){
+			public SQLiteCursor selectHitokotoList(SQLiteDatabase db){
 
 				SQLiteCursor cursor = null;
 
@@ -106,7 +106,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 			}
 			return cursor;
 		}
-	
+
 		/**
 		 * 引数のフレーズをHitokotoテーブルにインサートするプライベートメソッド
 		 * @param SQLiteDatabase
